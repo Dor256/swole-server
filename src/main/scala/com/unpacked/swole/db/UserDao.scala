@@ -8,11 +8,17 @@ object UserDao {
 
   case class User(id: Option[String], email: String, password: String)
   case class StoredUser(id: String, email: String, password: String, salt: String)
+  case class UserToJWT(id: String, jwt: String)
 
-  def addUser(email: String, password: String, salt: String): Unit =
-    sql"insert into user (EMAIL, PASSWORD, SALT) values ($email, $password, $salt)"
+  def addUser(id: UUID, email: String, password: String, salt: String, jwt: String): Unit = {
+    sql"insert into user (ID, EMAIL, PASSWORD, SALT) values ($id, $email, $password, $salt)"
       .update()
       .apply()
+
+    sql"insert into userjwt (USERID, JWT) values ($id, $jwt)"
+      .update()
+      .apply()
+  }
 
   def fetchUserByEmail(email: String): Option[StoredUser] =
     sql"select * from user where EMAIL = $email"

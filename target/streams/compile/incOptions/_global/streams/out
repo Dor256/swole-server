@@ -1,26 +1,34 @@
-[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/dorb/Workspace/workouts-server/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/dorb/Workspace/swole-server/target/scala-2.13/classes.bak[0m
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$anon$macro$11$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$$anon$3.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$anon$macro$11$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2$anon$importedEncoder$macro$13$1$$anon$3.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/dorb/Workspace/workouts-server/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AuthRouter$anon$importedDecoder$macro$11$1$anon$macro$9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/dorb/Workspace/swole-server/target/scala-2.13/classes.bak[0m

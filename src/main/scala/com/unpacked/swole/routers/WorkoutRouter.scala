@@ -8,7 +8,7 @@ import org.http4s.circe._
 import io.circe.generic.auto._
 import io.circe.syntax._
 
-import com.unpacked.workouts.db.WorkoutDao._
+import com.unpacked.swole.db.WorkoutDao._
 
 
 object WorkoutRouter {

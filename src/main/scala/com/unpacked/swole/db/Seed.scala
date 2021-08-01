@@ -10,7 +10,7 @@ object Seed {
       .execute()
       .apply()
 
-    sql"create table if not exists user(ID UUID DEFAULT RANDOM_UUID(), EMAIL VARCHAR(50), PASSWORD VARCHAR(100), SALT VARCHAR(50), PRIMARY KEY (ID))"
+    sql"create table if not exists user(ID UUID, EMAIL VARCHAR(50), PASSWORD VARCHAR(100), SALT VARCHAR(50), PRIMARY KEY (ID))"
       .execute()
       .apply()
 }

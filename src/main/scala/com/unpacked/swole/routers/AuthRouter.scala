@@ -2,19 +2,19 @@ package com.unpacked.swole.routers
 
 import cats.effect._
 import cats.implicits._
+import org.http4s.syntax.header._
+import org.http4s.headers.Authorization
 import org.http4s.dsl.Http4sDsl
 import org.http4s.HttpRoutes
-import com.unpacked.workouts.db.UserDao._
+import com.unpacked.swole.db.UserDao._
 import com.github.t3hnar.bcrypt._
 import org.http4s.EntityDecoder
 import io.circe.syntax._
-import io.circe.JsonObject
 import org.http4s.circe._
 import io.circe.generic.auto._
-import scala.util.Try
-import io.circe.Json
-import java.time.Instant
-import pdi.jwt.{JwtCirce, JwtAlgorithm, JwtClaim}
+import java.util.UUID
+import org.http4s.EntityEncoder
+import com.unpacked.swole.services.AuthService._
 
 object AuthRouter {
   def apply[F[_]: Concurrent]: HttpRoutes[F] = {
@@ -24,13 +24,40 @@ object AuthRouter {
     implicit val userDecoder: EntityDecoder[F, User] = jsonOf[F, User]
 
     HttpRoutes.of[F] {
+      case req @ GET -> Root / "authorize" => {
+        val maybeUser = for {
+          token <- req.headers.get[Authorization]
+          bearer <- ensureBearerToken(token.value)
+          claim <- validateJWT(bearer)
+          email <- claim.issuer
+          user <- fetchUserByEmail(email)
+        } yield user
+
+        maybeUser match {
+          case None => Forbidden("Bad Authorization Token")
+          case Some(user) => {
+            val partialUser = Map(
+              "id" -> user.id,
+              "email" -> user.email
+            )
+            Ok(partialUser.asJson)
+          }
+        }
+      }
       case req @ POST -> Root / "signup" =>
         for {
           user <- req.as[User]
           salt = BCrypt.gensalt()
           password = (user.password + salt).bcrypt
-          _ = addUser(user.email, password, salt)
-          res <- Ok()
+          uuid = UUID.randomUUID()
+          jwt = generateJWT(user.email)
+          _ = addUser(uuid, user.email, password, salt, jwt)
+          response = Map(
+            "id" -> uuid.toString(),
+            "email" -> user.email,
+            "jwt" -> jwt
+          )
+          res <- Ok(response.asJson)
         } yield res
       case req @ POST -> Root / "login" => 
         for {
@@ -41,7 +68,7 @@ object AuthRouter {
               val response = Map(
                 "id" -> storedUser.id,
                 "email" -> storedUser.email,
-                "jwt" -> generateJWT
+                "jwt" -> generateJWT(storedUser.email)
               )
               if (isVerified) Ok(response.asJson) else Forbidden("Wrong Email or Password")
             }
@@ -49,15 +76,5 @@ object AuthRouter {
           }
         } yield res
     }
-  }
-
-  def generateJWT: String = {
-    val claim = JwtClaim(
-      expiration = Some(Instant.now.plusSeconds(157784760).getEpochSecond),
-      issuedAt = Some(Instant.now.getEpochSecond)
-    )
-    val key = "secretKey"
-    val algo = JwtAlgorithm.HS256
-    JwtCirce.encode(claim, key, algo)
   }
 }

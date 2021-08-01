@@ -10,9 +10,7 @@ import org.http4s.server.blaze.BlazeServerBuilder
 import scala.concurrent.ExecutionContext.global
 import scala.concurrent.duration.DurationInt
 import db.Seed
-import routers.WorkoutRouter
-import routers.FileRouter
-import com.unpacked.workouts.routers.AuthRouter
+import routers.{WorkoutRouter, FileRouter, AuthRouter}
 
 object App extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
