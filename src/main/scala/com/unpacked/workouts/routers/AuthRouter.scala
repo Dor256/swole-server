@@ -13,6 +13,8 @@ import org.http4s.circe._
 import io.circe.generic.auto._
 import scala.util.Try
 import io.circe.Json
+import java.time.Instant
+import pdi.jwt.{JwtCirce, JwtAlgorithm, JwtClaim}
 
 object AuthRouter {
   def apply[F[_]: Concurrent]: HttpRoutes[F] = {
@@ -38,7 +40,8 @@ object AuthRouter {
               val isVerified = (user.password + storedUser.salt).isBcrypted(storedUser.password)
               val response = Map(
                 "id" -> storedUser.id,
-                "email" -> storedUser.email
+                "email" -> storedUser.email,
+                "jwt" -> generateJWT
               )
               if (isVerified) Ok(response.asJson) else Forbidden("Wrong Email or Password")
             }
@@ -46,5 +49,15 @@ object AuthRouter {
           }
         } yield res
     }
+  }
+
+  def generateJWT: String = {
+    val claim = JwtClaim(
+      expiration = Some(Instant.now.plusSeconds(157784760).getEpochSecond),
+      issuedAt = Some(Instant.now.getEpochSecond)
+    )
+    val key = "secretKey"
+    val algo = JwtAlgorithm.HS256
+    JwtCirce.encode(claim, key, algo)
   }
 }
