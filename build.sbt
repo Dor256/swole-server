@@ -1,4 +1,4 @@
-name := "scala-server"
+name := "swole-server"
 
 version := "0.1"
 

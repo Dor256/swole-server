@@ -1,4 +1,4 @@
-package com.unpacked.workouts.db
+package com.unpacked.swole.db
 
 import scalikejdbc._
 

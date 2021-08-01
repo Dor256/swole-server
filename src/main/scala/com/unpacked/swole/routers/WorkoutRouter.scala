@@ -1,4 +1,4 @@
-package com.unpacked.workouts.routers
+package com.unpacked.swole.routers
 
 import org.http4s._
 import cats.effect._

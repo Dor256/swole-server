@@ -1,3 +1,3 @@
-# Workouts App
+# Swole App Backend
 
-This repo contains the server code for the `Workouts` App.
+This repo contains the server code for the `Swole` App.

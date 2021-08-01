@@ -1,4 +1,4 @@
-package com.unpacked.workouts.routers
+package com.unpacked.swole.routers
 
 import cats.effect._
 import cats.implicits._

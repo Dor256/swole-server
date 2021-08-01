@@ -1,4 +1,4 @@
-package com.unpacked.workouts
+package com.unpacked.swole
 
 import cats.effect._
 import scalikejdbc.ConnectionPool
