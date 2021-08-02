@@ -14,10 +14,6 @@ object UserDao {
     sql"insert into user (ID, EMAIL, PASSWORD, SALT) values ($id, $email, $password, $salt)"
       .update()
       .apply()
-
-    sql"insert into userjwt (USERID, JWT) values ($id, $jwt)"
-      .update()
-      .apply()
   }
 
   def fetchUserByEmail(email: String): Option[StoredUser] =

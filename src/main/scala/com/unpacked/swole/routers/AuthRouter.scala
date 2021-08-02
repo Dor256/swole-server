@@ -15,6 +15,9 @@ import io.circe.generic.auto._
 import java.util.UUID
 import org.http4s.EntityEncoder
 import com.unpacked.swole.services.AuthService._
+import scala.util.Try
+import scala.util.Success
+import scala.util.Failure
 
 object AuthRouter {
   def apply[F[_]: Concurrent]: HttpRoutes[F] = {
@@ -51,13 +54,16 @@ object AuthRouter {
           password = (user.password + salt).bcrypt
           uuid = UUID.randomUUID()
           jwt = generateJWT(user.email)
-          _ = addUser(uuid, user.email, password, salt, jwt)
+          addUserAttempt = Try(addUser(uuid, user.email, password, salt, jwt))
           response = Map(
             "id" -> uuid.toString(),
             "email" -> user.email,
             "jwt" -> jwt
           )
-          res <- Ok(response.asJson)
+          res <- addUserAttempt match {
+            case Success(_) => Ok(response.asJson)
+            case Failure(_) => BadRequest("A User with That Email Already Exists!")
+          }
         } yield res
       case req @ POST -> Root / "login" => 
         for {
