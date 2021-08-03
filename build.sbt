@@ -15,6 +15,8 @@ lazy val TsecVersion = "0.4.0-M11"
 lazy val ScalaBcryptVersion = "4.1"
 lazy val JWTScalaVersion = "8.0.3"
 
+enablePlugins(JavaAppPackaging)
+
 libraryDependencies ++= Seq(
   "org.http4s" %% "http4s-blaze-server" % Http4sVersion,
   "org.http4s" %% "http4s-circe" % Http4sVersion,
