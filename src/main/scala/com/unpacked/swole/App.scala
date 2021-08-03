@@ -19,8 +19,6 @@ object App extends IOApp {
   
     Seed()
 
-    println(sys.env.getOrElse("SCALA_ENV", "DEV"))
-
     val corsConfig = CORSConfig(
       anyOrigin = true,
       anyMethod = false,
