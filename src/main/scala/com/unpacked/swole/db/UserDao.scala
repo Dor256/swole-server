@@ -8,7 +8,6 @@ object UserDao {
 
   case class User(id: Option[String], email: String, password: String)
   case class StoredUser(id: String, email: String, password: String, salt: String)
-  case class UserToJWT(id: String, jwt: String)
 
   def addUser(id: UUID, email: String, password: String, salt: String, jwt: String): Unit = {
     sql"insert into user (ID, EMAIL, PASSWORD, SALT) values ($id, $email, $password, $salt)"
