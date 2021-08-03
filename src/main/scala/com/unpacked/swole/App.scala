@@ -33,8 +33,11 @@ object App extends IOApp {
       "/auth" -> AuthRouter[IO]
     ).orNotFound
 
+    val host = "0.0.0.0"
+    val port: Int = sys.env.getOrElse("PORT", "8080").toInt
+
     BlazeServerBuilder[IO](global)
-      .bindHttp(8080, "localhost")
+      .bindHttp(port, host)
       .withHttpApp(CORS(routes, corsConfig))
       .resource
       .use(_ => IO.never)
