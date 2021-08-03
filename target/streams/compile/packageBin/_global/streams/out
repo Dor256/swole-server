@@ -46,6 +46,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/dorb/Workspace/swole-server/target/scala-2.13/classes/routers/WorkoutRouter$anon$importedDecoder$macro$11$1$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	routers/WorkoutRouter$$anonfun$apply$2$anon$importedEncoder$macro$35$1$anon$macro$33$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/dorb/Workspace/swole-server/target/scala-2.13/classes/routers/WorkoutRouter$$anonfun$apply$2$anon$importedEncoder$macro$35$1$anon$macro$33$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	schema.sql[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/dorb/Workspace/swole-server/target/scala-2.13/classes/schema.sql[0m
 [0m[[0m[0mdebug[0m] [0m[0m	db[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/dorb/Workspace/swole-server/target/scala-2.13/classes/db[0m
 [0m[[0m[0mdebug[0m] [0m[0m	db/WorkoutDao$Workout.class[0m

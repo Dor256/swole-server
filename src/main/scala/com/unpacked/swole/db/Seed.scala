@@ -1,16 +1,17 @@
 package com.unpacked.swole.db
 
 import scalikejdbc._
+import scala.io.Source
 
 object Seed {
   implicit val session: AutoSession = AutoSession
 
-  def apply(): Unit =
-    sql"create table if not exists workout(ID UUID DEFAULT RANDOM_UUID(), NAME VARCHAR(50), GOAL VARCHAR(50), PRIMARY KEY (ID))"
-      .execute()
-      .apply()
-
-    sql"create table if not exists user(ID UUID, EMAIL VARCHAR(50), PASSWORD VARCHAR(100), SALT VARCHAR(50), PRIMARY KEY (EMAIL))"
-      .execute()
-      .apply()
+  def apply(): Unit = {
+    val schema = Source.fromResource("schema.sql")
+    val statements = schema.getLines()
+      .filterNot(line => line.startsWith("--") || line.startsWith("/*") || line.isEmpty)
+      .mkString
+      .split(";")
+      .map(SQL(_).execute().apply())
+  }
 }
