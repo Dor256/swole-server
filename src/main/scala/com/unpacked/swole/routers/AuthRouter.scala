@@ -54,7 +54,7 @@ object AuthRouter {
           password = (user.password + salt).bcrypt
           uuid = UUID.randomUUID()
           jwt = generateJWT(user.email)
-          addUserAttempt = Try(addUser(uuid, user.email, password, salt, jwt))
+          addUserAttempt = Try(addUser(uuid, user.email, password, salt))
           response = Map(
             "id" -> uuid.toString(),
             "email" -> user.email,
