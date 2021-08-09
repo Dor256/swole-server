@@ -11,6 +11,7 @@ import scala.concurrent.ExecutionContext.global
 import scala.concurrent.duration.DurationInt
 import db.Seed
 import routers.{WorkoutRouter, FileRouter, AuthRouter}
+import com.unpacked.swole.middleware.AuthMiddleware
 
 object App extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
@@ -29,7 +30,7 @@ object App extends IOApp {
   
     val routes = Router(
       "/" -> FileRouter[IO],
-      "/workouts" -> WorkoutRouter[IO],
+      "/workouts" -> AuthMiddleware(WorkoutRouter[IO]),
       "/auth" -> AuthRouter[IO]
     ).orNotFound
 
