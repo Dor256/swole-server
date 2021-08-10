@@ -1,4 +1,4 @@
-package com.unpacked.swole.routers
+package com.xpacked.swole.routers
 
 import org.http4s.HttpRoutes
 import org.http4s.dsl.Http4sDsl

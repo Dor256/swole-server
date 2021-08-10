@@ -1,4 +1,4 @@
-package com.unpacked.swole.db
+package com.xpacked.swole.db
 
 import scalikejdbc._
 import scala.io.Source

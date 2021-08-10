@@ -1,4 +1,4 @@
-package com.unpacked.swole
+package com.xpacked.swole
 
 import cats.effect._
 import scalikejdbc.ConnectionPool
@@ -11,7 +11,7 @@ import scala.concurrent.ExecutionContext.global
 import scala.concurrent.duration.DurationInt
 import db.Seed
 import routers.{WorkoutRouter, FileRouter, AuthRouter}
-import com.unpacked.swole.middleware.AuthMiddleware
+import com.xpacked.swole.middleware.AuthMiddleware
 
 object App extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {

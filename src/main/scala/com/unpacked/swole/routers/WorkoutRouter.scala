@@ -1,4 +1,4 @@
-package com.unpacked.swole.routers
+package com.xpacked.swole.routers
 
 import org.http4s._
 import cats.effect._
@@ -8,8 +8,8 @@ import org.http4s.circe._
 import io.circe.generic.auto._
 import io.circe.syntax._
 
-import com.unpacked.swole.db.WorkoutDao._
-import com.unpacked.swole.services.AuthService._
+import com.xpacked.swole.db.WorkoutDao._
+import com.xpacked.swole.services.AuthService._
 import java.util.UUID
 import io.circe.Json
 

@@ -1,4 +1,4 @@
-package com.unpacked.swole.routers
+package com.xpacked.swole.routers
 
 import cats.effect._
 import cats.implicits._
@@ -6,7 +6,7 @@ import org.http4s.syntax.header._
 import org.http4s.headers.Authorization
 import org.http4s.dsl.Http4sDsl
 import org.http4s.HttpRoutes
-import com.unpacked.swole.db.UserDao._
+import com.xpacked.swole.db.UserDao._
 import com.github.t3hnar.bcrypt._
 import org.http4s.EntityDecoder
 import io.circe.syntax._
@@ -14,7 +14,7 @@ import org.http4s.circe._
 import io.circe.generic.auto._
 import java.util.UUID
 import org.http4s.EntityEncoder
-import com.unpacked.swole.services.AuthService._
+import com.xpacked.swole.services.AuthService._
 import scala.util.Try
 import scala.util.Success
 import scala.util.Failure

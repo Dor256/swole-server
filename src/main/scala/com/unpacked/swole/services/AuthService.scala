@@ -1,4 +1,4 @@
-package com.unpacked.swole.services
+package com.xpacked.swole.services
 
 import pdi.jwt.JwtClaim
 import pdi.jwt.JwtAlgorithm

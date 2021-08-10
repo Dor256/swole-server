@@ -1,10 +1,10 @@
-package com.unpacked.swole.middleware
+package com.xpacked.swole.middleware
 
 import cats.effect._
 import org.http4s.implicits._
 import cats.data.Kleisli
 import org.http4s.HttpRoutes
-import com.unpacked.swole.services.AuthService._
+import com.xpacked.swole.services.AuthService._
 import org.http4s.dsl.Http4sDsl
 import org.http4s._
 import cats.implicits._
