@@ -5,7 +5,7 @@ class AuthServiceTest extends AnyFunSpec {
   describe("JWT token") {
     it("Returns Some for a token with the 'Bearer' prefix") {
       val mockedValidJWT = "Bearer someRandomJWT"
-      assert(ensureBearerToken(mockedValidJWT) == None)
+      assert(ensureBearerToken(mockedValidJWT) == Some("someRandomJWT"))
     }
 
     it("Returns None for a token without the 'Bearer' prefix") {

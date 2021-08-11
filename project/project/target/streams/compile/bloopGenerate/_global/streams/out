@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0m[swole-server-build-build] Classpath dependencies List()[0m
-[0m[[0m[0mdebug[0m] [0m[0m[swole-server-build-build] Dependencies from configurations List()[0m
-[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'swole-server-build-build' to '/Users/dor/Workspace/swole-server/project/project/.bloop/swole-server-build-build.json'[0m
-[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/swole-server-build-build.json[0m
+[debug] [swole-server-build-build] Classpath dependencies List()
+[debug] [swole-server-build-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'swole-server-build-build' to '/Users/dor/Workspace/swole-server/project/project/.bloop/swole-server-build-build.json'
+[success] Generated .bloop/swole-server-build-build.json
