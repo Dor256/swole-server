@@ -28,6 +28,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % LogBackVersion,
   "org.scalamock" %% "scalamock" % ScalaMockVersion % Test,
   "org.scalatest" %% "scalatest" % ScalaTestVersion % Test,
+  "org.scalatest" %% "scalatest-funspec" % ScalaTestVersion % Test,
   "com.github.t3hnar" %% "scala-bcrypt" % ScalaBcryptVersion,
   "com.github.jwt-scala" %% "jwt-circe" % JWTScalaVersion
 )
